@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import {
+  Button,
+  Sidebar,
+  Content,
+  SideNav,
+  Logo,
+  Title,
+  Card,
+  Container
+} from "./styles/style";
+import logo from "./images/logo.png";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Sidebar>
+        <Logo src={logo} />
+        <SideNav></SideNav>
+      </Sidebar>
+      <Content>
+        <Title>Buttons</Title>
+        <Button primary>Primary</Button>
+        <Button>Default</Button>
+        <Button className="button-success">Success</Button>
+        <Button className="button-warning">Warning</Button>
+        <Button className="button-secondary">Secondary</Button>
+        <Button className="button-error">Error</Button>
+        <Title>Accordions</Title>
+        <Title>Cards</Title>
+        <Container>
+        <Card>
+          <h1>Jane Doe</h1>
+        </Card>
+        <Card>
+        <h1>Alan Delon</h1>
+        </Card>
+        </Container>
+      </Content>
+    </Fragment>
   );
 }
 
